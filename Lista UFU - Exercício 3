@@ -1,0 +1,15 @@
+# include <stdio.h>
+# include <stdlib.h>
+//3 - Entre com um nome e imprima o nome somente se a primeira letra do nome for ‘a’ (maiúscula ou minúscula).
+int main(){
+	int i;
+	char string[100];
+	
+	printf("Digite a string: \n");
+	fgets(string,100,stdin);
+		if(string[0]== 'a' || string[0]=='A'){
+			printf("%s", string);
+		}else{
+			printf("A primeira letra do nome nao eh 'a' ou 'A'.\n");
+		}
+}
