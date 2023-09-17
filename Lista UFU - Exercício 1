@@ -6,6 +6,6 @@
 int main(){
 	char string[100];
 	printf("Digite a string: \n");
-	gets(string);
+	fgets(string,100,stdin);
 	printf("\nA string eh: \n%s", string);
 }
