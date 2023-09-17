@@ -1,0 +1,11 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+//1 - Faça um programa que entao leia uma string e a imprima.
+
+int main(){
+	char string[100];
+	printf("Digite a string: \n");
+	gets(string);
+	printf("\nA string eh: \n%s", string);
+}
