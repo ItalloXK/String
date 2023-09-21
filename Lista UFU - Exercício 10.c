@@ -4,7 +4,7 @@
 /*10. Faça um programa que receba uma palavra e a imprima de tras-para-frente.*/
 int main(){
 	int i, tamanho;
-	char string[100], novaString[100];
+	char string[100];
 	printf("Digite a string: \n");
 	fgets(string,100,stdin);
 	tamanho = strlen(string);
