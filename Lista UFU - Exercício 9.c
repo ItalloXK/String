@@ -3,7 +3,7 @@
 /*9. Escreva um programa que substitui as ocorrencias de um caractere ‘0’ em uma string por ˆ
 outro caractere ‘1’.*/
 int main(){
-	int i, contador = 0;
+	int i;
 	char string[100];
 	printf("Digite a string: \n");
 	fgets(string,100,stdin);
