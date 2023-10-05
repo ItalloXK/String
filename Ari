@@ -1,0 +1,21 @@
+int main() {
+    char original[100], invertida[100];
+    int i, j;
+
+    printf("Digite uma string: ");
+    gets(original);
+
+    // Calcula o comprimento da string original
+    int tamanho = strlen(original);
+
+    // Inverte a string e armazena na variável invertida
+    for (i = 0, j = tamanho - 1; i < tamanho; i++, j--) {
+        invertida[i] = original[j];
+    }
+    invertida[i] = '\0';
+
+    printf("String original: %s\n", original);
+    printf("String invertida: %s\n", invertida);
+
+    return 0;
+}
