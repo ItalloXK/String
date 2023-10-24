@@ -14,11 +14,37 @@
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (Power-up Timer is disabled)
 #pragma config CP = OFF         // Code Protection bit (Code protection disabled)
 
-short int 
+short int I, A, B, C, ERRO;
+
 void main(void) {
     TRISB = 0X00;// SAIDAS
     TRISA = 0XFF;// ENTRADAS
+    A = PORTAbits.RA2;
+    B = PORTAbits.RA3;
+    C = PORTAbits.RA4;
+    ERRO = PORTAbits.RB2;
+    
     while(1){
-        
+        //EVS
+        if((B || C || I) && !ERRO){
+            PORTAbits.RB0 = 1;
+        }
+        else(){
+             PORTAbits.RB0 = 0;
+        }
+        //EVE
+        if((I && !A) && (!B || C)){
+            PORTAbits.RB1 = 1;
+        }else{
+            PORTAbits.RB1 = 0;
+        }
+        //ERRO
+        if((!I && !A && B && !C) || (I && A && !C) || (A && !B)){
+            PORTAbits.RB2 = 1;
+        }
+        else{
+            PORTAbits.RB2 = 0;
+        }
+    }
     return;
 }
