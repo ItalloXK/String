@@ -7,6 +7,8 @@
 
 
 #include <xc.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <pic16f84a.h>
 
 #pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator)
@@ -19,12 +21,21 @@ short int I, A, B, C, ERRO;
 void main(void) {
     TRISB = 0X00;// SAIDAS
     TRISA = 0XFF;// ENTRADAS
+    I = PORTAbits.RA0;
     A = PORTAbits.RA2;
     B = PORTAbits.RA3;
     C = PORTAbits.RA4;
     ERRO = PORTAbits.RB2;
-    
     while(1){
+        if(PORTAbits.RB0 = 1;){
+            PORTAbits.RB0 = 0;
+        }
+        else{
+            PORTAbits.RB0 = 0;
+        }
+    }
+    while(1){
+        
         //EVS
         if((B || C || I) && !ERRO){
             PORTAbits.RB0 = 1;
@@ -32,12 +43,16 @@ void main(void) {
         else(){
              PORTAbits.RB0 = 0;
         }
+        
+        
         //EVE
-        if((I && !A) && (!B || C)){
+        if((I && !A) && (!B || C) && !ERRO){
             PORTAbits.RB1 = 1;
         }else{
             PORTAbits.RB1 = 0;
         }
+        
+        
         //ERRO
         if((!I && !A && B && !C) || (I && A && !C) || (A && !B)){
             PORTAbits.RB2 = 1;
@@ -45,6 +60,8 @@ void main(void) {
         else{
             PORTAbits.RB2 = 0;
         }
+        
+        
     }
     return;
 }
