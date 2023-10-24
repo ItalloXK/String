@@ -1,0 +1,24 @@
+/*
+ * File:   c questao3.c
+ * Author: itallo
+ *
+ * Created on 23 de Outubro de 2023, 20:45
+ */
+
+
+#include <xc.h>
+#include <pic16f84a.h>
+
+#pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator)
+#pragma config WDTE = OFF       // Watchdog Timer (WDT disabled)
+#pragma config PWRTE = OFF      // Power-up Timer Enable bit (Power-up Timer is disabled)
+#pragma config CP = OFF         // Code Protection bit (Code protection disabled)
+
+short int 
+void main(void) {
+    TRISB = 0X00;// SAIDAS
+    TRISA = 0XFF;// ENTRADAS
+    while(1){
+        
+    return;
+}
