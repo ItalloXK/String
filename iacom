@@ -54,7 +54,7 @@ void main(void) {
         
         
         //ERRO
-        if((!I && !A && B && !C) || (I && A && !C) || (A && !B)){
+        if((I && B && !C) || (I && A && !B)){
             PORTAbits.RB2 = 1;
         }
         else{
